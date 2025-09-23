@@ -36,4 +36,6 @@ void loop() {
     delay(1000);
     offIndex++;
   }
+  
+  delay(1000);
 }
