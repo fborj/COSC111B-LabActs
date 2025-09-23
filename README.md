@@ -11,3 +11,7 @@ Lab Act 1:
   Matin-ao - 99
   Pascual - 98
   
+Lab Act 2:
+  Borja - 98
+  Matin-ao - 100
+  Pascual - 99
