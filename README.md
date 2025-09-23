@@ -1,5 +1,13 @@
 Members:
 
-Borja, Ma. Liel Fatyma  - 100/100
+Borja, Ma. Liel Fatyma 
 
-Matin-ao, Carl Luis G.  - 99/100
+Matin-ao, Carl Luis G.
+
+Pascual, Audric
+
+Lab Act 1:
+  Borja - 100
+  Matin-ao - 99
+  Pascual - 98
+  
