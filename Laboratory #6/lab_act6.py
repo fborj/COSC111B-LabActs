@@ -8,6 +8,7 @@ try:
 
     # NEW: Clear buffer so "Arduino Ready." does not get read as a response
     arduino.reset_input_buffer()
+    print("Connected to Arduino on COM4.")
 
     while True:
         if arduino.in_waiting > 0:
