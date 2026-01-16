@@ -1,31 +1,25 @@
 import serial
 import time
-import os
 
-try:
-    arduino = serial.Serial(port='COM4', baudrate=9600, timeout=1)
-    time.sleep(2)
+# Adjust COM port as needed (e.g., 'COM3' or '/dev/ttyUSB0')
+arduino = serial.Serial(port='COM5', baudrate=9600, timeout=1)
 
-    # NEW: Clear buffer so "Arduino Ready." does not get read as a response
-    arduino.reset_input_buffer()
-    print("Connected to Arduino on COM4.")
+time.sleep(2)  # Allow Arduino reset
 
-    while True:
-        if arduino.in_waiting > 0:
-            data = arduino.read(1).decode()
-            if data == 'R':
-                arduino.write(b"1")
-            elif data == 'G':
-                arduino.write(b"2")
-            elif data == 'B':
-                arduino.write(b"3")
-            else:
-                print(f"Command {data} is not a valid choice!!")
-            time.sleep(1)
+print("Python Serial Listener Started")
 
-except serial.SerialException as e:
-    print(f"Serial exception: {e}")
-except Exception as ex:
-    print(f"Unexpected error: {ex}")
+while True:
+    if arduino.in_waiting > 0:
+        data = arduino.readline().decode().strip().upper()
 
-    
+        if data == 'R':
+            arduino.write(b'1')
+            print("Received R → Sent 1")
+
+        elif data == 'G':
+            arduino.write(b'2')
+            print("Received G → Sent 2")
+
+        elif data == 'B':
+            arduino.write(b'3')
+            print("Received B → Sent 3")
